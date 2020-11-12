@@ -30,3 +30,5 @@ function random_pallet() {
   cuadro9.style.backgroundColor = getRandomRGB();
   displayRgb.textContent = getRandomRGB();
 }
+
+displayRgb.textContent = getRandomRGB();
