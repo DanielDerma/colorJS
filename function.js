@@ -10,8 +10,8 @@ var cuadro8 = document.querySelectorAll(".col-lg-3")[7];
 var cuadro9 = document.querySelectorAll(".col-lg-3")[8];
 var displayRgb = document.querySelector(".displayRgb");
 var Case = 0;
-
-// Funcines...
+  
+// Funciones...
 function getRandomRGB() { //depeniente random_pallet 1 
   var slotR = (Math.floor(Math.random() * (255 - 0 + 1)) + 0).toString();
   var slotG = (Math.floor(Math.random() * (255 - 0 + 1)) + 0).toString();
