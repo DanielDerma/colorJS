@@ -1,22 +1,26 @@
 // Variables...
 var displayRgb = document.querySelector(".displayRgb");
 var newColor = document.querySelector("h3.new");
-var easy = document.querySelector("h3.easy");
-var hard = document.querySelector("h3.hard");
+
 var Case = 0;
 
 // Funciones...
 function getRandomRGB() { //depeniente randomPallet 1 
-  var slotR = (Math.floor(Math.random() * (255 - 0 + 1)) + 0).toString();
-  var slotG = (Math.floor(Math.random() * (255 - 0 + 1)) + 0).toString();
-  var slotB = (Math.floor(Math.random() * (255 - 0 + 1)) + 0).toString();
-  return `RGB(${slotR},${slotG},${slotB})`; 
+    var slotR = (Math.floor(Math.random() * (255 - 0 + 1)) + 0).toString();
+    var slotG = (Math.floor(Math.random() * (255 - 0 + 1)) + 0).toString();
+    var slotB = (Math.floor(Math.random() * (255 - 0 + 1)) + 0).toString();
+    return `RGB(${slotR},${slotG},${slotB})`; 
 }
 
 function randomSelectColor() { //dependiente randomCaseColorHard 2
   return randomSelect = (Math.floor(Math.random() * (8 - 0 + 1)) + 0);
 }
-
+var Case1 = document.querySelectorAll("#myDIV")[0]; 
+var Case2 = document.querySelectorAll("#myDIV")[1]; 
+var Case3 = document.querySelectorAll("#myDIV")[2]; 
+var Case4 = document.querySelectorAll("#myDIV")[3]; 
+var Case5 = document.querySelectorAll("#myDIV")[4]; 
+var Case6 = document.querySelectorAll("#myDIV")[5]; 
 
 // Variables Discriminativas
 function variablesHard() {
@@ -27,15 +31,11 @@ function variablesHard() {
   var cuadro5 = document.querySelectorAll(".col-lg-3")[4];
   var cuadro6 = document.querySelectorAll(".col-lg-3")[5];  
 }
-// function variablesEasy() {
-// }
-var cuadro1 = document.querySelectorAll(".col-lg-3")[0]; 
-var cuadro2 = document.querySelectorAll(".col-lg-3")[1];
-var cuadro3 = document.querySelectorAll(".col-lg-3")[2]; 
+
 
 // Funciones Discriminativas
 
-function randomPalletHard() { 
+function randomPallet() { 
   cuadro1.style.backgroundColor = getRandomRGB();
   cuadro2.style.backgroundColor = getRandomRGB();
   cuadro3.style.backgroundColor = getRandomRGB();
@@ -45,11 +45,6 @@ function randomPalletHard() {
 
 }
 
-function randomPalletEasy() { 
-  cuadro1.style.backgroundColor = getRandomRGB();
-  cuadro2.style.backgroundColor = getRandomRGB();
-  cuadro3.style.backgroundColor = getRandomRGB();
-}
 
 function randomCaseColorHard() {
   // Case=0;
@@ -58,8 +53,9 @@ function randomCaseColorHard() {
       displayRgb.textContent = cuadro1.style.backgroundColor;
       Case = 1;
       break;
+      
     case 2:
-      displayRgb.textContent = cuadro2.style.backgroundColor;
+      
       Case = 2;
       break;
     case 3:
@@ -82,34 +78,9 @@ function randomCaseColorHard() {
       // pass
   }
 }
-function randomCaseColorEasy() {
-  // Case=0;
-  switch(randomSelectColor()) {
-    case 1:
-      displayRgb.textContent = cuadro1.style.backgroundColor;
-      Case = 1;
-      break;
-    case 2:
-      displayRgb.textContent = cuadro2.style.backgroundColor;
-      Case = 2;
-      break;
-    case 3:
-      displayRgb.textContent = cuadro3.style.backgroundColor;
-      Case = 3;
-      break;
-    default:
-      // pass
-  }
-}
 
 // Acciones navbar... 
 newColor.addEventListener("click", function(){
-  run(); //Hard
-});
-easy.addEventListener("click", function(){
-
-});
-hard.addEventListener("click", function(){
   run(); //Hard
 });
 
@@ -150,30 +121,7 @@ function accionHard() {
       displayRgb.textContent = 'i did 6';
     }
   });
-
 }
-
-function accionEasy() {
-  cuadro1.addEventListener("click", function(){
-    if (1 == Case) {
-      displayRgb.textContent = 'i did 1';
-    }
-  });
-  
-  cuadro2.addEventListener("click", function(){
-    if (2 == Case) {
-      displayRgb.textContent = 'i did 2';
-    }
-  });
-  
-  cuadro3.addEventListener("click", function(){
-    if (3 == Case) {
-      displayRgb.textContent = 'i did 3';
-    }
-  });  
-
-}
-
 
 function run() { //Hard
   randomPallet(); //Hard
